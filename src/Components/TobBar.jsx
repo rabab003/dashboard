@@ -128,6 +128,7 @@ export default function TobBar({open,handleDrawerOpen, setMode}) {
             {theme.palette.mode === "light" ? (
               
             <IconButton onClick ={()=>{
+               localStorage.setItem("currentMode", theme.palette.mode === "dark"? "light":"dark")
                 setMode((prevMode)=>
                  prevMode === "light"? "dark" : "light"
                  );
@@ -143,6 +144,7 @@ export default function TobBar({open,handleDrawerOpen, setMode}) {
 
             <IconButton 
                 onClick ={()=>{
+                localStorage.setItem("currentMode", theme.palette.mode === "light"? "dark":"light")
                 setMode((prevMode)=>
                  prevMode === "light"? "dark" : "light"
                  );

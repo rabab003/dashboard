@@ -28,7 +28,7 @@ export default function MiniDrawer() {
     setOpen(false);
   };
    
-  const [ mode , setMode] = React.useState('dark');
+  const [ mode , setMode] = React.useState(localStorage.getItem("currentMode"));
   const theme = React.useMemo(()=> createTheme(getDesignTokens(mode)), [mode])
 
   return (
