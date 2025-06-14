@@ -4,7 +4,10 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import TopBar from './Components/TobBar';
 import SideBar from './Components/SideBar';
-import { styled } from '@mui/material/styles';
+import { createTheme, styled, ThemeProvider } from '@mui/material/styles';
+import { getDesignTokens } from './theme';
+import { Mode } from '@mui/icons-material';
+
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -24,11 +27,15 @@ export default function MiniDrawer() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+   
+  const [ mode , setMode] = React.useState('dark');
+  const theme = React.useMemo(()=> createTheme(getDesignTokens(mode)), [mode])
 
   return (
+    <ThemeProvider theme={theme}>
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <TopBar open={open} handleDrawerOpen={handleDrawerOpen}/>
+      <TopBar open={open} handleDrawerOpen={handleDrawerOpen} setMode={setMode}/>
       <SideBar open={open} handleDrawerClose={handleDrawerClose}/>
 
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
@@ -37,6 +44,11 @@ export default function MiniDrawer() {
           Lorem ipsum
         </Typography>
       </Box>
-    </Box>
+    </Box>      
+    </ThemeProvider>
+
   );
 }
+
+
+

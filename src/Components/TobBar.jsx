@@ -1,10 +1,15 @@
 import React from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import { IconButton, styled, Typography } from '@mui/material';
+import { alpha, Box, IconButton, InputBase, Stack, styled, Typography, useTheme } from '@mui/material';
 import MuiAppBar from '@mui/material/AppBar';
 import SearchIcon from '@mui/icons-material/Search';
-
+import { Delete } from '@mui/icons-material';
+import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
+import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
+import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
 
 const drawerWidth = 240;
 
@@ -74,7 +79,10 @@ const AppBar = styled(MuiAppBar, {
   ],
 }));
 
-export default function TobBar({open,handleDrawerOpen}) {
+
+export default function TobBar({open,handleDrawerOpen, setMode}) {
+
+  const theme = useTheme()
   return (
     <>
 
@@ -94,7 +102,7 @@ export default function TobBar({open,handleDrawerOpen}) {
           >
             <MenuIcon />
           </IconButton>
-              <Search>
+            <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -103,10 +111,58 @@ export default function TobBar({open,handleDrawerOpen}) {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+
+          <Box flexGrow={1}/>  
+
+          <Stack direction={"row"}>
+            <IconButton color='inherit'>
+              <PersonOutlinedIcon />
+            </IconButton>
+            <IconButton color='inherit'>
+              <SettingsOutlinedIcon />
+            </IconButton>
+            <IconButton color='inherit'>
+              <NotificationsNoneOutlinedIcon />
+            </IconButton>
+
+            {theme.palette.mode === "light" ? (
+              
+            <IconButton onClick ={()=>{
+                setMode((prevMode)=>
+                 prevMode === "light"? "dark" : "light"
+                 );
+              }}
+            
+            color='inherit'
+            >
+              <NightlightOutlinedIcon/>
+            </IconButton>
+            )
+            :
+            (
+
+            <IconButton 
+                onClick ={()=>{
+                setMode((prevMode)=>
+                 prevMode === "light"? "dark" : "light"
+                 );
+              }}
+            
+             color='inherit'
+             
+             >
+              <WbSunnyOutlinedIcon />
+            </IconButton>)
+            }
+   
+
+
+          </Stack>
+
+
         </Toolbar>
       </AppBar>
       
     </>
   )
 }
-// 23:00
