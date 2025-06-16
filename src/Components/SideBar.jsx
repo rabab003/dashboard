@@ -12,13 +12,10 @@ import MailIcon from "@mui/icons-material/Mail";
 import List from "@mui/material/List";
 import MuiDrawer from "@mui/material/Drawer";
 import { styled, useTheme } from "@mui/material/styles";
-
 // avatar img
 import avatar from "../assets/rabab.jpg";
-
 // uuid
 import { v4 as id } from "uuid";
-
 // icons sidebar
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
@@ -33,7 +30,8 @@ import LiveHelpOutlinedIcon from "@mui/icons-material/LiveHelpOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import ShowChartOutlinedIcon from "@mui/icons-material/ShowChartOutlined";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { grey } from "@mui/material/colors";
 
 const drawerWidth = 240;
 
@@ -149,6 +147,7 @@ const Array3 = [
 ];
 
 export default function SideBar({ open, handleDrawerClose }) {
+  let location = useLocation();
   const theme = useTheme();
 
   const navigate = useNavigate();
@@ -211,6 +210,12 @@ export default function SideBar({ open, handleDrawerClose }) {
                 minHeight: 48,
                 justifyContent: open ? "initial" : "center",
                 px: 2.5,
+                bgcolor:
+                  location.pathname === item.path
+                    ? theme.palette.mode === "dark"
+                      ? grey[700]
+                      : grey[300]
+                    : null,
               }}
             >
               <ListItemIcon
@@ -261,9 +266,7 @@ export default function SideBar({ open, handleDrawerClose }) {
           </ListItem>
         ))}
       </List>
-
       <Divider />
-
       <List>
         {Array3.map((item) => (
           <ListItem key={item.id} disablePadding sx={{ display: "block" }}>
