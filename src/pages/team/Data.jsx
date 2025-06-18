@@ -1,67 +1,13 @@
+import { Typography } from "@mui/material";
+
 export const rows = [
   {
-    id: 8,
+    id: 1,
     name: "rossini frances",
     email: "example@gmail.com",
     age: 36,
     phone: "(098)7654567",
-    access: "user",
-  },
-  {
-    id: 8,
-    name: "rossini frances",
-    email: "example@gmail.com",
-    age: 36,
-    phone: "(098)7654567",
-    access: "user",
-  },
-  {
-    id: 8,
-    name: "rossini frances",
-    email: "example@gmail.com",
-    age: 36,
-    phone: "(098)7654567",
-    access: "user",
-  },
-  {
-    id: 8,
-    name: "rossini frances",
-    email: "example@gmail.com",
-    age: 36,
-    phone: "(098)7654567",
-    access: "user",
-  },
-  {
-    id: 8,
-    name: "rossini frances",
-    email: "example@gmail.com",
-    age: 36,
-    phone: "(098)7654567",
-    access: "user",
-  },
-  {
-    id: 8,
-    name: "rossini frances",
-    email: "example@gmail.com",
-    age: 36,
-    phone: "(098)7654567",
-    access: "user",
-  },
-  {
-    id: 8,
-    name: "rossini frances",
-    email: "example@gmail.com",
-    age: 36,
-    phone: "(098)7654567",
-    access: "user",
-  },
-  {
-    id: 8,
-    name: "rossini frances",
-    email: "example@gmail.com",
-    age: 36,
-    phone: "(098)7654567",
-    access: "user",
+    access: "Admin",
   },
   {
     id: 2,
@@ -69,10 +15,66 @@ export const rows = [
     email: "example@gmail.com",
     age: 36,
     phone: "(098)7654567",
+    access: "Admin",
+  },
+  {
+    id: 3,
+    name: "rossini frances",
+    email: "example@gmail.com",
+    age: 36,
+    phone: "(098)7654567",
+    access: "Admin",
+  },
+  {
+    id: 4,
+    name: "rossini frances",
+    email: "example@gmail.com",
+    age: 36,
+    phone: "(098)7654567",
+    access: "Manager",
+  },
+  {
+    id: 5,
+    name: "rossini frances",
+    email: "example@gmail.com",
+    age: 36,
+    phone: "(098)7654567",
+    access: "Manager",
+  },
+  {
+    id: 6,
+    name: "rossini frances",
+    email: "example@gmail.com",
+    age: 36,
+    phone: "(098)7654567",
+    access: "Manager",
+  },
+  {
+    id: 7,
+    name: "rossini frances",
+    email: "example@gmail.com",
+    age: 36,
+    phone: "(098)7654567",
     access: "user",
   },
   {
-    id: 2,
+    id: 8,
+    name: "rossini frances",
+    email: "example@gmail.com",
+    age: 36,
+    phone: "(098)7654567",
+    access: "user",
+  },
+  {
+    id: 9,
+    name: "rossini frances",
+    email: "example@gmail.com",
+    age: 36,
+    phone: "(098)7654567",
+    access: "user",
+  },
+  {
+    id: 10,
     name: "rossini frances",
     email: "example@gmail.com",
     age: 36,
@@ -81,36 +83,43 @@ export const rows = [
   },
 ];
 
-export const columns = [
-  {
-    field: "id",
-    headerName: "ID",
-    width: 33,
-    align: "center",
-    headerAlign: "center",
-  },
+// export const columns = [
+//   {
+//     field: "id",
+//     headerName: "ID",
+//     width: 33,
+//     align: "center",
+//     headerAlign: "center",
+//   },
 
-  { field: "name", headerName: "Name", align: "center", headerAlign: "center" },
-  {
-    field: "email",
-    headerName: "Email",
-    flex: 1,
-    align: "center",
-    headerAlign: "center",
-  },
-  { field: "age", headerName: "Age", align: "center", headerAlign: "center" },
-  {
-    field: "phone",
-    headerName: "Phone",
-    flex: 1,
-    align: "center",
-    headerAlign: "center",
-  },
-  {
-    field: "access",
-    headerName: "Access",
-    flex: 1,
-    align: "center",
-    headerAlign: "center",
-  },
-];
+//   { field: "name", headerName: "Name", align: "center", headerAlign: "center" },
+//   {
+//     field: "email",
+//     headerName: "Email",
+//     flex: 1,
+//     align: "center",
+//     headerAlign: "center",
+//   },
+//   { field: "age", headerName: "Age", align: "center", headerAlign: "center" },
+//   {
+//     field: "phone",
+//     headerName: "Phone",
+//     flex: 1,
+//     align: "center",
+//     headerAlign: "center",
+//   },
+//   {
+//     field: "access",
+//     headerName: "Access",
+//     flex: 1,
+//     align: "center",
+//     headerAlign: "center",
+//     renderCell: () => {
+//       return (
+//         <Box>
+//           <Typography variant="body1">admin</Typography>
+//         </Box>
+//       );
+//     },
+//   },
+// ];
