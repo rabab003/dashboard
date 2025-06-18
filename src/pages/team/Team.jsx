@@ -76,7 +76,7 @@ export default function Team() {
 
   return (
     <>
-      <div
+      <Box
         style={{
           height: 600,
           width: "98%",
@@ -85,7 +85,7 @@ export default function Team() {
         }}
       >
         <DataGrid columns={columns} rows={rows} />
-      </div>
+      </Box>
     </>
   );
 }

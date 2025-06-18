@@ -14,12 +14,14 @@ import {
 
 import Team from "./pages/team/Team.jsx";
 import Dashboard from "./pages/dashboard/Dashboards.jsx";
+import Contact from "./pages/Contact/Contact.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<Dashboard />} />
       <Route path="team" element={<Team />} />
+      <Route path="contact" element={<Contact />} />
     </Route>
   )
 );
