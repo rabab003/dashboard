@@ -15,6 +15,7 @@ import {
 import Team from "./pages/team/Team.jsx";
 import Dashboard from "./pages/dashboard/Dashboards.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
+import Invoices from "./pages/invoices/Invoices.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
       <Route index element={<Dashboard />} />
       <Route path="team" element={<Team />} />
       <Route path="contact" element={<Contact />} />
+      <Route path="invoices" element={<Invoices />} />
     </Route>
   )
 );
