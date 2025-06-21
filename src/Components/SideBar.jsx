@@ -102,7 +102,7 @@ const Array2 = [
   {
     text: "Profile Form",
     icon: <PermIdentityOutlinedIcon />,
-    path: "/profile",
+    path: "/form",
     id: id(),
   },
   {
