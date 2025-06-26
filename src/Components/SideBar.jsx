@@ -123,7 +123,7 @@ const Array3 = [
   {
     text: "Bar Chart",
     icon: <BarChartOutlinedIcon />,
-    path: "/barchart",
+    path: "/barChart",
     id: id(),
   },
   {

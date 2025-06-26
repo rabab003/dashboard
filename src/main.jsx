@@ -18,6 +18,9 @@ import Contact from "./pages/Contact/Contact.jsx";
 import Invoices from "./pages/invoices/Invoices.jsx";
 import Form from "./pages/form/Form.jsx";
 import Calendar from "./pages/calendar/Calendar.jsx";
+import FAQ from "./pages/FAQ/FAQ.jsx";
+import BarChart from "./pages/bar/BarChart.jsx";
+import { PieChart } from "@mui/icons-material";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +31,11 @@ const router = createBrowserRouter(
       <Route path="Invoices" element={<Invoices />} />
       <Route path="form" element={<Form />} />
       <Route path="calendar" element={<Calendar />} />
+      <Route path="faq" element={<FAQ />} />
+      <Route path="barChart" element={<BarChart />} />
+      <Route path="piechart" element={<PieChart />} />
+      <Route path="linechart" element={<PieChart />} />
+      <Route path="geographychart" element={<PieChart />} />
     </Route>
   )
 );
@@ -38,5 +46,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
-
-// 2:18:55
