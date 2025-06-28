@@ -1,5 +1,10 @@
 import React from "react";
+import LineChart from "./LineChart";
 
 export default function Line() {
-  return <div>line</div>;
+  return (
+    <div>
+      <LineChart />
+    </div>
+  );
 }
