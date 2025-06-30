@@ -1,5 +1,7 @@
 import React from "react";
 import { ResponsiveChoropleth } from "@nivo/geo";
+import { Box, useTheme } from "@mui/material";
+import { geo } from "./world_countries";
 
 const data = [
   {
@@ -689,18 +691,136 @@ const data = [
 ];
 
 export default function GeographyChart() {
+  const theme = useTheme();
   return (
-    <>
+    <Box
+      sx={{
+        borderRadius: "10px",
+        height: "75vh",
+        border: `1px solid ${theme.palette.text.primary}`,
+      }}
+    >
       <ResponsiveChoropleth
-        features="/* please have a look at the description for usage */"
+        features={geo.features}
+        data={data}
         margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
         colors="greys"
+        theme={{
+          //   background: "#ffffff",
+          text: {
+            fontSize: 11,
+            fill: theme.palette.text.primary,
+            outlineWidth: 0,
+            outlineColor: "#ffffff",
+          },
+          axis: {
+            domain: {
+              line: {
+                stroke: "#777777",
+                strokeWidth: 1,
+              },
+            },
+            legend: {
+              text: {
+                fontSize: 12,
+                fill: theme.palette.text.primary,
+                outlineWidth: 0,
+                outlineColor: "#ffffff",
+              },
+            },
+            ticks: {
+              line: {
+                stroke: "#777777",
+                strokeWidth: 1,
+              },
+              text: {
+                fontSize: 11,
+                fill: theme.palette.text.primary,
+                outlineWidth: 0,
+                outlineColor: "#ffffff",
+              },
+            },
+          },
+          grid: {
+            line: {
+              stroke: "#dddddd",
+              strokeWidth: 1,
+            },
+          },
+          legends: {
+            title: {
+              text: {
+                fontSize: 11,
+                fill: theme.palette.text.primary,
+                outlineWidth: 0,
+                outlineColor: "#ffffff",
+              },
+            },
+            text: {
+              fontSize: 11,
+              fill: theme.palette.text.primary,
+              outlineWidth: 0,
+              outlineColor: "#ffffff",
+            },
+            ticks: {
+              line: {},
+              text: {
+                fontSize: 10,
+                fill: theme.palette.text.primary,
+                outlineWidth: 0,
+                outlineColor: "#ffffff",
+              },
+            },
+          },
+          annotations: {
+            text: {
+              fontSize: 13,
+              fill: theme.palette.text.primary,
+              outlineWidth: 2,
+              outlineColor: "#ffffff",
+              outlineOpacity: 1,
+            },
+            link: {
+              stroke: "#000000",
+              strokeWidth: 1,
+              outlineWidth: 2,
+              outlineColor: "#ffffff",
+              outlineOpacity: 1,
+            },
+            outline: {
+              stroke: "#000000",
+              strokeWidth: 2,
+              outlineWidth: 2,
+              outlineColor: "#ffffff",
+              outlineOpacity: 1,
+            },
+            symbol: {
+              fill: "#000000",
+              outlineWidth: 2,
+              outlineColor: "#ffffff",
+              outlineOpacity: 1,
+            },
+          },
+          tooltip: {
+            // wrapper: {},
+            container: {
+              background: "#ffffff",
+              color: theme.palette.text.primary,
+              fontSize: 12,
+            },
+            basic: {},
+            chip: {},
+            table: {},
+            tableCell: {},
+            tableCellValue: {},
+          },
+        }}
         domain={[0, 1000000]}
         unknownColor="#666666"
         label="properties.name"
         valueFormat=".2s"
+        projectionScale={200}
         enableGraticule={true}
-        graticuleLineColor="#dddddd"
         borderWidth={0.5}
         borderColor={{ theme: "background" }}
         legends={[
@@ -714,12 +834,12 @@ export default function GeographyChart() {
             itemWidth: 94,
             itemHeight: 18,
             itemDirection: "left-to-right",
-            itemTextColor: "#444444",
+            itemTextColor: theme.palette.text.primary,
             itemOpacity: 0.85,
             symbolSize: 18,
           },
         ]}
       />
-    </>
+    </Box>
   );
 }
