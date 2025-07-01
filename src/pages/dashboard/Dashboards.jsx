@@ -7,7 +7,11 @@ export default function Dashboards() {
   return (
     <>
       <Box sx={{ textAlign: "right" }}>
-        <Button variant="contained" color="primary">
+        <Button
+          sx={{ padding: "2px 8px", textTransform: "capitalize" }}
+          variant="contained"
+          color="primary"
+        >
           <DownloadDoneOutlined />
           Donwload Reports
         </Button>
