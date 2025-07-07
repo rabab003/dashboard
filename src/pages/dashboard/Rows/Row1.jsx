@@ -24,7 +24,7 @@ export default function Row1() {
         />
         <Card
           // sx={{ fontSize: "23px", color: Theme.palette.secondary.main }}
-          icon={<EmailIcon />}
+          icon={<EmailOutlined />}
           chart={undefined}
           title={"12,421"}
           subTitle={"Email sent"}
@@ -32,7 +32,7 @@ export default function Row1() {
         />
         <Card
           // sx={{ fontSize: "23px", color: Theme.palette.secondary.main }}
-          icon={<EmailIcon />}
+          icon={<EmailOutlined />}
           chart={undefined}
           title={"12,421"}
           subTitle={"Email sent"}
@@ -40,7 +40,7 @@ export default function Row1() {
         />
         <Card
           // sx={{ fontSize: "23px", color: Theme.palette.secondary.main }}
-          icon={<EmailIcon />}
+          icon={<EmailOutlined />}
           chart={undefined}
           title={"12,421"}
           subTitle={"Email sent"}
