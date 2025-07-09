@@ -2,6 +2,9 @@ import { Paper, Stack, Typography, useTheme } from "@mui/material";
 import React from "react";
 import Card from "../Card";
 import { EmailOutlined } from "@mui/icons-material";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import TrafficIcon from "@mui/icons-material/Traffic";
+import AssuredWorkloadIcon from "@mui/icons-material/AssuredWorkload";
 import { data1, data2, data3, data4 } from "../data";
 
 export default function Row1() {
@@ -15,7 +18,6 @@ export default function Row1() {
         justifyContent={{ xs: "center", sm: "space-between" }}
       >
         <Card
-          // sx={{ fontSize: "23px", color: Theme.palette.secondary.main }}
           icon={<EmailOutlined />}
           title={"12,421"}
           subTitle={"Email sent"}
@@ -24,28 +26,26 @@ export default function Row1() {
           scheme={"red_purple"}
         />
         <Card
-          // sx={{ fontSize: "23px", color: Theme.palette.secondary.main }}
-          icon={<EmailOutlined />}
-          title={"12,421"}
-          subTitle={"Email sent"}
-          increase={"+14%"}
+          icon={<TrafficIcon />}
+          title={"431,532"}
+          subTitle={"sales obtained"}
+          increase={"+21%"}
           data={data2}
           scheme={"category10"}
         />
         <Card
-          icon={<EmailOutlined />}
-          title={"12,421"}
-          subTitle={"Email sent"}
-          increase={"+14%"}
+          icon={<PersonAddIcon />}
+          title={"43,561"}
+          subTitle={"new clients"}
+          increase={"+5%"}
           data={data3}
           scheme={"accent"}
         />
         <Card
-          // sx={{ fontSize: "23px", color: Theme.palette.secondary.main }}
-          icon={<EmailOutlined />}
-          title={"12,421"}
-          subTitle={"Email sent"}
-          increase={"+14%"}
+          icon={<AssuredWorkloadIcon />}
+          title={"1,628,152"}
+          subTitle={" Traffic received"}
+          increase={"+42%"}
           data={data4}
           scheme={"paired"}
         />

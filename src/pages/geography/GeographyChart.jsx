@@ -690,14 +690,14 @@ const data = [
   },
 ];
 
-export default function GeographyChart() {
+export default function GeographyChart({ isDashboard = false }) {
   const theme = useTheme();
   return (
     <Box
       sx={{
         borderRadius: "10px",
-        height: "75vh",
-        border: `1px solid ${theme.palette.text.primary}`,
+        height: isDashboard ? "350px" : "75vh",
+        border: isDashboard ? "" : `1px solid ${theme.palette.text.primary}`,
       }}
     >
       <ResponsiveChoropleth
@@ -823,22 +823,26 @@ export default function GeographyChart() {
         enableGraticule={true}
         borderWidth={0.5}
         borderColor={{ theme: "background" }}
-        legends={[
-          {
-            anchor: "bottom-left",
-            direction: "column",
-            justify: true,
-            translateX: 20,
-            translateY: -100,
-            itemsSpacing: 0,
-            itemWidth: 94,
-            itemHeight: 18,
-            itemDirection: "left-to-right",
-            itemTextColor: theme.palette.text.primary,
-            itemOpacity: 0.85,
-            symbolSize: 18,
-          },
-        ]}
+        legends={
+          isDashboard
+            ? []
+            : [
+                {
+                  anchor: "bottom-left",
+                  direction: "column",
+                  justify: true,
+                  translateX: 20,
+                  translateY: -100,
+                  itemsSpacing: 0,
+                  itemWidth: 94,
+                  itemHeight: 18,
+                  itemDirection: "left-to-right",
+                  itemTextColor: theme.palette.text.primary,
+                  itemOpacity: 0.85,
+                  symbolSize: 18,
+                },
+              ]
+        }
       />
     </Box>
   );

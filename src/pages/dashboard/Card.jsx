@@ -25,10 +25,10 @@ export default function Card({
       >
         <Stack>
           {icon}
-          <Typography variant="body2" sx={{ fontSize: "13px" }}>
+          <Typography variant="body2" sx={{ fontSize: "13px", my: "10px" }}>
             {title}
           </Typography>
-          <Typography variant="body2" sx={{ fontSize: "13px" }}>
+          <Typography variant="body2" sx={{ fontSize: "14px" }}>
             {subTitle}
           </Typography>
         </Stack>
