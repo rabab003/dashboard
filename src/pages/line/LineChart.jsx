@@ -270,10 +270,10 @@ const data = [
   },
 ];
 
-export default function LineChart() {
+export default function LineChart({ isDashboard = false }) {
   const theme = useTheme();
   return (
-    <Box sx={{ height: "75vh" }}>
+    <Box sx={{ height: isDashboard ? "300px" : "75vh" }}>
       <ResponsiveLine
         data={data}
         margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
@@ -394,8 +394,11 @@ export default function LineChart() {
             tableCellValue: {},
           },
         }}
-        axisBottom={{ legend: "transportation", legendOffset: 36 }}
-        axisLeft={{ legend: "count", legendOffset: -40 }}
+        axisBottom={{
+          legend: isDashboard ? null : "transportation",
+          legendOffset: 36,
+        }}
+        axisLeft={{ legend: isDashboard ? null : "count", legendOffset: -40 }}
         pointSize={10}
         pointColor={{ theme: "background" }}
         pointBorderWidth={2}

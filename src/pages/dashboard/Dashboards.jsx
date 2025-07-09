@@ -1,5 +1,6 @@
 import React from "react";
 import Row1 from "./Rows/Row1";
+import Row2 from "./Rows/Row2";
 import { Box, Button } from "@mui/material";
 import { DownloadDoneOutlined } from "@mui/icons-material";
 
@@ -18,6 +19,7 @@ export default function Dashboards() {
       </Box>
       dashboard
       <Row1 />
+      <Row2 />
     </>
   );
 }

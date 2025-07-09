@@ -4,7 +4,7 @@ import LineChart from "./LineChart";
 export default function Line() {
   return (
     <div>
-      <LineChart />
+      <LineChart isDashboard={true} />
     </div>
   );
 }
