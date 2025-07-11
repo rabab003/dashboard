@@ -7,6 +7,7 @@ import {
 } from "@mui/icons-material";
 import { DataGrid } from "@mui/x-data-grid";
 import { columns, rows } from "./data";
+import Header from "../../Components/Header";
 
 export default function Invoices() {
   return (
@@ -18,6 +19,7 @@ export default function Invoices() {
         marginRight: "auto",
       }}
     >
+      <Header text={"Invoices"} subText={"List of all invoices"} />
       <DataGrid
         // slots={{ toolbar: CustomToolbar }}
         checkboxSelection

@@ -1,5 +1,6 @@
 import { Box, useTheme } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
+import Header from "../../Components/Header";
 import React from "react";
 
 const data = [
@@ -63,6 +64,11 @@ export default function Bar({ isDashboard = false }) {
   const theme = useTheme();
   return (
     <Box sx={{ height: isDashboard ? "300px" : "75vh" }}>
+      <Header
+        text={"Bar Chart"}
+        subText={"The Minimum Wage In Germany,France And Span (EUR/month)"}
+      />
+
       <ResponsiveBar
         data={data}
         indexBy="country"

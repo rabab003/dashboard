@@ -1,6 +1,7 @@
 import React from "react";
 import { ResponsiveLine } from "@nivo/line";
 import { Box, useTheme } from "@mui/material";
+import Header from "../../Components/Header";
 
 const data = [
   {
@@ -274,6 +275,8 @@ export default function LineChart({ isDashboard = false }) {
   const theme = useTheme();
   return (
     <Box sx={{ height: isDashboard ? "300px" : "75vh" }}>
+      <Header text={"Line Chart"} subText={"simple line chart"} />
+
       <ResponsiveLine
         data={data}
         margin={{ top: 50, right: 110, bottom: 50, left: 60 }}

@@ -2,6 +2,7 @@ import React from "react";
 import { ResponsivePie } from "@nivo/pie";
 import { Height } from "@mui/icons-material";
 import { Box, useTheme } from "@mui/system";
+import Header from "../../Components/Header";
 
 const data = [
   {
@@ -38,15 +39,19 @@ const data = [
 
 export default function PieChart({ isDashboard = false }) {
   const theme = useTheme();
+  const isDark = theme.palette.mode === "dark";
+
   return (
     <Box sx={{ height: isDashboard ? "220px" : "75vh" }}>
+      <Header
+        text="Pie Chart"
+        subText="Distribution of programming languages"
+      />
       <ResponsivePie
         data={data}
         theme={{
-          //   background: "#ffffff",
           text: {
             fontSize: 11,
-            // fill: theme.palette.text.primary,
             outlineWidth: 0,
             outlineColor: "#ffffff",
           },
@@ -139,17 +144,14 @@ export default function PieChart({ isDashboard = false }) {
             },
           },
           tooltip: {
-            // wrapper: {},
             container: {
-              background: "#ffffff",
+              background: isDark ? theme.palette.background.default : "#ffffff",
               color: theme.palette.text.primary,
               fontSize: 12,
+              border: isDark ? `1px solid ${theme.palette.divider}` : "none",
+              borderRadius: "4px",
+              boxShadow: theme.shadows[2],
             },
-            basic: {},
-            chip: {},
-            table: {},
-            tableCell: {},
-            tableCellValue: {},
           },
         }}
         margin={
@@ -166,9 +168,37 @@ export default function PieChart({ isDashboard = false }) {
         arcLinkLabelsSkipAngle={10}
         arcLinkLabelsTextColor={theme.palette.text.primary}
         arcLinkLabelsThickness={2}
-        arcLinkLabelsColor={{ from: "color" }}
+        arcLinkLabelsColor={{ from: theme.palette.text.primary }}
         arcLabelsSkipAngle={10}
-        arcLabelsTextColor={{ from: "color", modifiers: [["darker", 2]] }}
+        arcLabelsTextColor={{
+          from: theme.palette.text.primary,
+          modifiers: [["darker", 2]],
+        }}
+        // Customize hover effects
+        colors={{ datum: "data.color" }} // Use the colors from your data
+        onMouseEnter={(datum, event) => {
+          // You can add custom hover logic here if needed
+        }}
+        // Customize the active (hovered) slice
+        activeInnerRadiusOffset={4}
+        activeOuterRadiusOffset={8}
+        // Customize the tooltip
+        tooltip={({ datum }) => (
+          <div
+            style={{
+              padding: "8px 12px",
+              background: isDark ? theme.palette.background.paper : "#ffffff",
+              color: theme.palette.text.primary,
+              border: isDark
+                ? `1px solid ${theme.palette.divider}`
+                : "1px solid #ddd",
+              borderRadius: "4px",
+              boxShadow: theme.shadows[2],
+            }}
+          >
+            <strong>{datum.label}</strong>: {datum.value}
+          </div>
+        )}
         legends={
           isDashboard
             ? []

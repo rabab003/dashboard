@@ -6,7 +6,7 @@ export default function Header({ text, subText }) {
 
   return (
     <>
-      <Box>
+      <Box sx={{ mb: 3 }}>
         <Typography
           sx={{
             color: theme.palette.info.light,

@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 // import { Stack } from "@mui/material";
 import { Stack } from "@mui/material";
+import Header from "../../Components/Header";
 
 export default function FAQ() {
   const [expanded, setExpanded] = React.useState(false);
@@ -16,6 +17,8 @@ export default function FAQ() {
 
   return (
     <>
+      <Header text={"FAQ"} subText={"List of all FAQs You Need"} />
+
       <Accordion
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}

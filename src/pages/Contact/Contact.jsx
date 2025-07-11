@@ -2,6 +2,7 @@ import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { rows } from "./data";
 import { Box, Typography } from "@mui/material";
+import Header from "../../Components/Header";
 
 export default function Contact() {
   const columns = [
@@ -68,6 +69,8 @@ export default function Contact() {
           marginRight: "auto",
         }}
       >
+        <Header text={"Contact"} subText={"List of all contacts"} />
+
         <DataGrid
           // slots={{ toolbar: CustomToolbar }}
           columns={columns}
