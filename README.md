@@ -4,6 +4,10 @@
 
 A feature-rich admin dashboard built with React, Material UI, and Nivo charts with full dark/light mode support.
 
+## Demo
+
+Check out the live demo: [Demo Link](https://dashboard-six-bay-429f1gdopa.vercel.app/)
+
 ## Features
 
 - 📊 **Data Visualization**
@@ -31,7 +35,3 @@ A feature-rich admin dashboard built with React, Material UI, and Nivo charts wi
 - 🗂 **Data Management**
   - Data Grid for tabular data
   - Invoice management system
-
-## Demo
-
-Check out the live demo: [Demo Link](https://dashboard-six-bay-429f1gdopa.vercel.app/)
