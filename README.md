@@ -1,7 +1,6 @@
 # Modern React Dashboard
 
-![Dashboard Preview](https://via.placeholder.com/800x400?text=Dashboard+Preview)  
-_Replace with actual screenshot or demo link_
+![Dashboard Preview](/src/assets/demo.png)
 
 A feature-rich admin dashboard built with React, Material UI, and Nivo charts with full dark/light mode support.
 
