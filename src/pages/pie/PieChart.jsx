@@ -43,10 +43,9 @@ export default function PieChart({ isDashboard = false }) {
 
   return (
     <Box sx={{ height: isDashboard ? "220px" : "75vh" }}>
-      <Header
-        text="Pie Chart"
-        subText="Distribution of programming languages"
-      />
+      {isDashboard ? null : (
+        <Header text={"Pie Chart"} subText={"simple Pie chart"} />
+      )}
       <ResponsivePie
         data={data}
         theme={{

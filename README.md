@@ -35,13 +35,4 @@ A feature-rich admin dashboard built with React, Material UI, and Nivo charts wi
 
 ## Demo
 
-Check out the live demo: [Demo Link](#)  
-_Replace with your actual demo link_
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/dashboard.git
-   cd dashboard
-   ```
+Check out the live demo: [Demo Link](#)

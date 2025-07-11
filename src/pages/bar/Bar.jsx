@@ -64,10 +64,12 @@ export default function Bar({ isDashboard = false }) {
   const theme = useTheme();
   return (
     <Box sx={{ height: isDashboard ? "300px" : "75vh" }}>
-      <Header
-        text={"Bar Chart"}
-        subText={"The Minimum Wage In Germany,France And Span (EUR/month)"}
-      />
+      {isDashboard ? null : (
+        <Header
+          text={"Bar Chart"}
+          subText={"The Minimum Wage In Germany,France And Span (EUR/month)"}
+        />
+      )}
 
       <ResponsiveBar
         data={data}

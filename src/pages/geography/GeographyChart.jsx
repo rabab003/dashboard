@@ -701,7 +701,9 @@ export default function GeographyChart({ isDashboard = false }) {
         // border: isDashboard ? "" : `1px solid ${theme.palette.text.primary}`,
       }}
     >
-      <Header text={"Geography Chart"} subText={"simple Geography Chart"} />
+      {isDashboard ? null : (
+        <Header text={"Geography Chart"} subText={"simple  geo chart"} />
+      )}
 
       <ResponsiveChoropleth
         features={geo.features}

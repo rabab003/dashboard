@@ -275,7 +275,9 @@ export default function LineChart({ isDashboard = false }) {
   const theme = useTheme();
   return (
     <Box sx={{ height: isDashboard ? "300px" : "75vh" }}>
-      <Header text={"Line Chart"} subText={"simple line chart"} />
+      {isDashboard ? null : (
+        <Header text={"Line Chart"} subText={"simple line chart"} />
+      )}
 
       <ResponsiveLine
         data={data}
