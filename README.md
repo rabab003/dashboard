@@ -34,4 +34,4 @@ A feature-rich admin dashboard built with React, Material UI, and Nivo charts wi
 
 ## Demo
 
-Check out the live demo: [Demo Link](#)
+Check out the live demo: [[Demo Link](https://dashboard-six-bay-429f1gdopa.vercel.app/)](#)
